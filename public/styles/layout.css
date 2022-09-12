@@ -22,15 +22,13 @@ body {
 }
 
 main {
-  width: 90%;
-  background-color: #ffefff;
+  background-color: #fefefe;
   align-items: center;
   flex-direction: column;
 }
 
 section {
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 
