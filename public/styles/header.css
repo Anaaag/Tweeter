@@ -1,17 +1,13 @@
 header.account {
   height: 400px;
   width: 100%;
+  background-color: #E9D3FF;
+  
   display: flex;
- position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 120px;
  }
  
  
- header.account div {
- display: flex;
- justify-content: center;
- }
- 
- header.profile h2 {
- 
-   font-family: "Bungee", sans-serif;
- }

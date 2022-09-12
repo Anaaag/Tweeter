@@ -16,11 +16,24 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #ffefff;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
-  z-index: 1;
 }
+
+main {
+  width: 90%;
+  background-color: #ffefff;
+  align-items: center;
+  flex-direction: column;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
