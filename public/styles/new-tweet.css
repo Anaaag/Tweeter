@@ -7,6 +7,19 @@
   align-items: center;
 }
 
+.error-message {
+  color: black;
+  font-family: "Bungee", sans-serif;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-line {
+  border: 3px solid #B19CD8
+}
+
 .counter {
   font-family: "Bungee", sans-serif;
   padding: 5px;
@@ -25,10 +38,10 @@
   background-color: black;
   border: none;
   font-family: "Bungee", sans-serif;
-  color: white;
-  background: #000000;
+  color: black;
+  background: #B19CD8
 }
 
 button:hover {
-  color: #B19CD8
+  color: white;
 }

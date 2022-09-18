@@ -6,8 +6,25 @@ $(document).ready(() => {
     const $textArea = $(this).find("textarea")
     const tweetText = $textArea.val()
     const $counter = $(this).find("output")
-    if (tweetText === "") return alert("Error");
-    if (tweetText.length > maxChars) return alert("Error")
+   
+    const escapedText = escape(tweetText);
+    if (tweetText !== escapedText) {
+      $(".error-message").text("Invalid Input");
+      $(".error-line").slideDown(300).slideUp(3000);
+      return;
+    }
+    if (tweetText === "") {
+      $(".error-message").text("!!Error Tweet field empty!!");
+      $(".error-line").slideDown(300).slideUp(3000);
+      return;
+      //return alert("Error");
+    }
+    if (tweetText.length > maxChars) {
+      $(".error-message").text("Character Limit Exceeded");
+      $(".error-line").slideDown(300).slideUp(3000);
+      return;
+      // return alert("Error")
+    }
 
     const tweetSerialized = $(this).serialize();
     $.post("/tweets", tweetSerialized)
@@ -18,6 +35,11 @@ $(document).ready(() => {
     })
  });
 
+  const escape = function(str) {
+    let div = doceument.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   const createTweetElement = function(tweet) {
     const name = tweet.user.name
@@ -34,7 +56,7 @@ $(document).ready(() => {
         </span>
         <span>${handle}</span>
      </header>
-      <p>${text}</p>
+      <p>${escape(text)}</p>
       <footer>
         <span>${timeAgo}</span>
         <span>
@@ -47,9 +69,6 @@ $(document).ready(() => {
     `
     return htmlElement;
   }
-
-
-
 
   const renderTweets = function(tweets) {
     const $tweetsContainer = $(`#tweets-container`)
