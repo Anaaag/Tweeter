@@ -6,7 +6,6 @@ $(document).ready(() => {
     const $textArea = $(this).find("textarea")
     const tweetText = $textArea.val()
     const $counter = $(this).find("output")
-   
     const escapedText = escape(tweetText);
     if (tweetText !== escapedText) {
       $(".error-message").text("Invalid Input");
@@ -36,7 +35,7 @@ $(document).ready(() => {
  });
 
   const escape = function(str) {
-    let div = doceument.createElement("div");
+    let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
